@@ -1,8 +1,8 @@
 /*! 
-axisj - v1.1.1 - 2016-03-21 
+axisj - v1.1.1 - 2016-03-26 
 */
 /*! 
-axisj - v1.1.1 - 2016-03-21 
+axisj - v1.1.1 - 2016-03-26 
 */
 
 if(!window.AXConfig){
@@ -360,9 +360,13 @@ if(!window.AXConfig){
 
 				exception: "not found errmessage"
 			}
+		},
+		RegisterModules: {
+		  /*"datetime": "moment"*/
 		}
 	};
 }
+
 /* ---------------------------- */
 var axf = AXUtil = {
     async: true,
@@ -1806,6 +1810,12 @@ Object.extend(String.prototype, (function () {
      * ```
      */
     function toDate(separator, defaultDate) {
+        if (AXConfig["RegisterModules"] && AXConfig["RegisterModules"]["datetime"] == "moment") {
+            if (window["moment"]) {
+                return moment(String(this))._d;
+            }
+        }
+
         function local_date(yy, mm, dd, hh, mi, ss) {
             var utc_d, local_d;
             local_d = new Date();
@@ -3419,6 +3429,7 @@ function AX_A(iterable) {
 
 var trace = axf.console;
 var getUrlInfo = axf.getUrlInfo;
+
 /* ---------------------------- */
 /**
  * AXJ UI 클래스 기본형
