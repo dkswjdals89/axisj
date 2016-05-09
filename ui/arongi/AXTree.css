@@ -63,6 +63,7 @@
   padding: 0px;
   background: url('images/dx-tree-head-border.png') repeat-y 100% 0px;
   vertical-align: bottom;
+  overflow: hidden;
   cursor: pointer;
 }
 .AXTree .AXTreeScrollBody .AXTreeColHead .colHeadTable tbody tr td:hover {
@@ -291,6 +292,7 @@
   background: url('images/dx-tree-body-border.png') repeat-y 100% 0px;
   vertical-align: bottom;
   border-bottom: 1px solid #c8c8c8;
+  overflow: hidden;
   cursor: pointer;
 }
 .AXTree .AXTreeScrollBody .AXTreeBody .treeBodyTable tbody tr td.selected {
